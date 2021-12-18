@@ -1,0 +1,94 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Oblique;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww24300\viewh21280\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 %ls		list directory\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 man		find out what command does (press q to quit)(type \'91/\'91 a then whatever you\'92re searching for e.g. \'91tips\'92 \'97 like control F)\
+ls- la		list hidden files\
+cd		change directory (go all the way back to first place thing)\
+pwd		to check which directory you\'92re in\
+cd ..		go back one step in directory\
+clear		clears whole screen\
+ls -l		list everything in that directory or whatever\
+mkdir		make directory (type mkdir [name of directory]\
+rm		remove (deletes files/directories)(careful!) - just file?\
+			rm -rf [name of directory]	to delete directory- or file??\
+			But if you type \'91rm -Rf *\'92 it will ask you if you\'92re sure you want to delete 
+\f1\i all
+\f0\i0  the files in the directory \'97> type \'91y\'92 and it\'92s done. (Don\'92t do this!) To delete file, type rm [file name] and to delete directory, type \'91rm -rf [directory name]\'92\
+rmdir		to delete directory (only works if empty)\
+\
+cd /		you\'92re at the root of your filesystem\
+~		home directory\
+touch		create file\
+		can also change date/time of file by typing \'91touch -t [yyyymmddhhmm.ss] [file name]\'92 e.g. touch -t 199809281630.50 whale (can just not put in seconds btw)\
+		can also type \'91cat > \'91 in place of touch\
+\
+cat		preview a file\'92s content (type \'91cat [file name]\'92 including the file type (dunno how to know file type))(or can start typing name and press tab to finish)\
+		can edit what u see in cat by typing in and pressing ctrl d (or shift?)\
+		when file is too big to see all with cat, use \'91more\'92 instead (can search with / like u can in man, and exit with q)\
+cat -e 		cat but with extra info (e.g. $ for each hard return)\
+			($ at end of what 42 gives u in project pdf also tells u this is where the command line is up to (i.e. is representing the bfranks@F2N053 ex05\'92 rather than if it\'92s ON the next line down it shows the command line is up to the next line (i.e. a new line has been put into the function) rather than up to just immediately after the output kinda thing)\
+\
+head		like cat, but can choose to just show e.g. first 2 lines: \'91head -n 2 [file name]\'92 or if u want to see first 9 characters, \'91bfranks -c 9 [file name]\'92 bit that\'92s always at the start of a new line.\
+tail		same as head, but shows last lines/characters not first\
+\
+cp		copy (cp source destination, where source = file and destination = directory)\
+			so type \'91cp [file name] ..\'92 If you want to put it in the parent directory) (don\'92t know how to put it anywhere else yet other than back a directory)(note it\'92s \'91copy\'92 i.e. original still in original place. Mv is to move)\
+\
+mv		move (type \'91mv [file name] ..\'92)(again, dunno how to move not just to .. )\
+chmod	change mode (changes access permissions to file system objects)\
+		type \'91chmod 000 [file name]\'92 makes permissions 0 for me, 0 for my group and 0 for the rest. Or if you type \'91chmod 700 [file name]\'92 it\'92ll give 7 to you and 0 to the other 2 (so ppl can\'92t see it or do anything with it). So reading is designated score of 4, writing score 2 and execute score 1\'85 if u want first group (you) to have all 3 it\'92s 4+2+1= 7 then if u want second group (group) to have read and execute it\'92s 4+1= 5 and if u want last group (all) to only write it\'92s 2. So total thing would be 752. Different combos of digits gives different patterns of permission.\
+Or, can specify u for users, g for group and o for other. Or \'91a\'92 for all (all 3). So to add reading rights to group, type \'91chmod g+r [file name]. Or to remove execution rights for everyone, type \'91chmod a-x [file name]\'92\
+\
+Ctrl-A beginning of line, Ctrl-E end of line, Ctrl-C delete line, Ctrl-L clear screen\
+echo		replays what u type in parameter in standard output\
+\
+* means all, so if u want to select all text files u put *.txt\
+\
+wc		wildcard\
+		wc -l tells u how many lines in that file\
+grep		to filter a file. Type \'91grep [what you\'92re searching for] [file name you\'92re searching]\'92\
+		reverse grep searches for every line NOT containing the thing you\'92re searching for (type \'91grep -v [][]\'92) (as opposed to +)\
+grep -i		grep but search is not case sensitive\
+\
+ln		to link two files (ex2 in shell00)(make parent one first (touch) then do \'91ln [first file] [second file]\'92 (even tho 2nd file hasn\'92t been made yet)\
+ln -s		sym link (can be between a directory and a file)\
+			to then change things e.g. date, permissions for each separately, use -h for example \'91chmod -h 777 [file/directory name]\'92\
+\
+klist		to get a kerberos ticket (do it in ex03 or whichever directory that exercise is using)\
+			Then type klist > klist.txt to write a list of the ticket in a text file (the > means put it in this place, and klist.txt makes a text file called klist.txt (doesn\'92t have to be pre-existing file, just writing it here makes it exist))\
+\
+\
+\
+LHS of code is permissions column. If it starts with d = directory, if starts with - = file. The first set of 3 letters (r,w,x- read, write and execute permissions) are your permissions for that file (can include dash e.g. if whole thing is -rw-r\'97r\'97 then the first set of 3 is rw- and second set is r- - (permission for group) and third is r - - (permission for world) (first dash just denotes \'91file\'92, as opposed to d = directory). Then the next column across (\'91root\'92) is the user to whom the directory/file belongs to\'85..\
+RHS column is the name. If it\'92s \'91..\'92 It\'92s the parent directory (and I think \'91.\'92 is current directory??)\
+\
+If you type just up arrow, it\'92ll put in whichever code you used last (time saver)(and down arrow too)\
+Tab to finish name of file/command. Tab tab to see if there are multiple options for what u typed (e.g. \'91te\'92 could be test or test2)\
+\
+Variable assignment: toast = jam\
+Echo toast \'97> toast\
+Echo $toast \'97> jam \'97 this won\'92t work if u are in another shell/subshell\
+	to make a new shell, type \'91sh\'92\
+	to exit the new shell, type \'91exit\'92\
+	to put it in new environment, type export toast (then env to see the environment or something)(then when u do the new shell thing the jam will come across with echo $toast)\
+\
+Vim		touch carrot, then vim carrot -> type \'91a\'92 to start typing then esc the \'91:w\'92 and enter to save, then \'91:q\'92 and enter to exit vim. (This > is what Claudia said : w q enter\'92)\
+\
+Bash script is like a file that other ppl can access, that has a string of commands in it which can be applied to that person\'92s data. For Shell00 ex05 project, you make a bash file called \'91git_commit.sh\'92 (touch and type that, in ex05 folder). Then vim that, and type in: \'91#!/bin/sh\'92 one first line (is like a barcode saying, \'91this is a bash file! Run the following text as a command.\'92) and then on next line down, type the command to run: \'91git log --pretty=\'93%H\'94 -5\'92 where the git log lists the previous commits, the pretty bit is saying \'91in this format\'85\'92 the %H makes it commit hash, so only shows the hash part of the commit info not the whole lot (just a short one line), then -5 means only show the last 5 commits.\
+Then to check it (I.e. when you\'92re the evaluator) u run the command (on some folder that contains stuff that was previously committed e.g. a project repository) \'91bash git.commit.sh | cat -e\'92 where bash tells the computer to run the file as a command (the command within the file, which we wrote earlier), and the | denotes a pipe, so it says to run the output of the LHS (output being list of previous commits) through what the RHS says (cat, which makes the previous commits displayed). The -e just puts $ onto hidden characters at the end (was required for the project).\
+\
+Shell00 ex06: write shell script that lists all ignored files of GiT repository. First, make specified file name by touch. Then vim it, add the sam bash key (#!/bin/sh) and on new line put \'91git status --ignored -s | grep \'93!!\'94 | cut -c4-\'91 where git status is the normal git status (so we want to see the git status of the repository), \'97ignored is to show the the \'91ignored\'92 files and -s puts it into a format where there are 2 !! Marks at the front of the lines where the actual name starts. Then pipe, so that the output is subjected to grep \'93!!\'94 Which pulls out all the lines with !! At the front (which, due to -s, are the ones we want with the names or whatever). Lastly, another pipe, cos the files list with junk (incl !!) at the start but we only want a record of the name as shown in project pdf, so cut -c4- removes the characters up to number 4 (so 4th character becomes 1st) and then the - after the 4 means the rest of the line/name continues until the end and puts a $ sign at the end (like the -e from previous project except it\'92s just -).\
+Then, to check it, have to understand the concept of git ignore files. So, .gitignore files contain text of names of files you DON\'92T want to be added to git when you\'92re doing add-commit-push. So if u generate a whole lot of junk files in a project, in your repository, instead of going through them and deleting them you can put their name in a .gitignore file (special type of file) so that git skips these when you\'92re batch adding files to git. E.g. if u have a file named frog, that u don\'92t want to be added, type \'91frog\'92 in .gitignore file and it will prevent it from being added. So to evaluate, have to make a .gitignore file, add in a bunch of files u want to ignore, then in the repository folder make files of the same name, to prove that when u run the command (by \'91bash git_ignore.sh | cat -e) it displays the files that are in the .gitignore (and doesn\'92t show the others). \
+\
+Command-shift-home to get home in finder \
+\
+\
+Didn\'92t understand shell basics 6 (wildcard, tilde)\
+\
+}

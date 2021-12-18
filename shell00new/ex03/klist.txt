@@ -1,0 +1,5 @@
+Credentials cache: API:18BD2DD8-2964-4C09-8C8D-56AF8A2439AD
+        Principal: bfranks@42ADEL.ORG.AU
+
+  Issued                Expires               Principal
+Nov 23 17:59:28 2021  Nov 24 03:59:28 2021  krbtgt/42ADEL.ORG.AU@42ADEL.ORG.AU
